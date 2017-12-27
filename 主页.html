@@ -5,18 +5,98 @@
     <meta charset="UTF-8">
     <title>图书管理系统</title>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: url(img/17961491_102417672000_2.png);
+            background-size: cover;
+        }
+
+        h1 {
+            color: azure;
+        }
+
+        .header {
+            margin: 10px auto;
+            height: 100px;
+            width: 70%;
 
 
+        }
+
+        .find {
+            width: 50px;
+            height: 30px;
+            background-color: azure;
+            border-radius: 10px;
+        }
+
+        .header input {
+            border-radius: 10px;
+            border: 1px solid black;
+            height: 30px;
+
+        }
+
+        buttton {
+            border: 3px solid #ccc;
+            height: 30px;
+            width: 30px;
+
+        }
+
+        .context {
+            margin: 10px auto;
+            border-right-color: aqua;
+            height: 50%;
+            width: 70%;
+            color: aliceblue;
+        }
+
+        .footer {
+            margin: 10px auto;
+
+
+        }
     </style>
 </head>
 
 <body>
+    <div class="header">
+        <h1>请填写你要搜索的图书</h1>
+        <input type="text" placeholder="请输入书名">
+        <input type="text" placeholder="请输入作者">
+        <input type="text" placeholder="请输入出版社">
+        <button class="find">搜索</button>
 
 
+    </div>
+    <div class="context">
+        <table>
+            <tr>
+                <td>书名</td>
+                <td>作者名</td>
+                <td>数量</td>
+                <td>出版社</td>
+                <td>单价</td>
+            </tr>
+             <tr>
+                <td>斗破苍穹</td>
+                <td>天蚕土豆</td>
+                <td>10000</td>
+                <td>笔下文学</td>
+                <td>5.00$</td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer">
+
+    </div>
 
     <script>
-
-
     </script>
 </body>
 
