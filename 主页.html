@@ -11,7 +11,8 @@
         }
 
         body {
-            background: url(img/17961491_102417672000_2.png);
+
+            background: url(img/17961491_102417672000_2.png) no-repeat;
             background-size: cover;
         }
 
@@ -22,7 +23,7 @@
         .header {
             margin: 10px auto;
             height: 100px;
-            width: 70%;
+            width: 50%;
 
 
         }
@@ -51,7 +52,7 @@
         .context {
             margin: 10px auto;
             border-right-color: aqua;
-            height: 50%;
+            height: 500px;
             width: 70%;
             color: aliceblue;
         }
@@ -60,6 +61,16 @@
             margin: 10px auto;
 
 
+        }
+
+        .table1 {
+            border: 1px solid #ff0;
+            width: 70%;
+        }
+        .table1 tr:nth-of-type(1){
+            font-size: 2vw;
+            font-weight: bold;
+            
         }
     </style>
 </head>
@@ -75,7 +86,7 @@
 
     </div>
     <div class="context">
-        <table>
+        <table class="table1">
             <tr>
                 <td>书名</td>
                 <td>作者名</td>
@@ -83,7 +94,7 @@
                 <td>出版社</td>
                 <td>单价</td>
             </tr>
-             <tr>
+            <tr>
                 <td>斗破苍穹</td>
                 <td>天蚕土豆</td>
                 <td>10000</td>
