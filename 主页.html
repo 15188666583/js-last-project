@@ -22,13 +22,14 @@
 
         .header {
             margin: 10px auto;
-            height: 100px;
-            width: 50%;
+            /*            height: 100px;*/
+            width: 80%;
+            margin-bottom: 30px;
 
 
         }
 
-        .find {
+        #find {
             width: 50px;
             height: 30px;
             background-color: azure;
@@ -53,7 +54,7 @@
             margin: 10px auto;
             border-right-color: aqua;
             height: 500px;
-            width: 70%;
+            width: 80%;
             color: aliceblue;
         }
 
@@ -65,12 +66,42 @@
 
         .table1 {
             border: 1px solid #ff0;
-            width: 70%;
+            width: 80%;
+            text-align: center;
         }
-        .table1 tr:nth-of-type(1){
+
+        .table1 tr:nth-of-type(1) {
             font-size: 2vw;
             font-weight: bold;
-            
+        }
+
+        .table1 tr td button {
+            border-radius: 30px;
+            height: 20px;
+            width: 40px;
+            border: 1px solid #fff;
+            background-color: cornsilk;
+
+        }
+
+        #add {
+            border-radius: 10px;
+            height: 30px;
+            width: 70px;
+            border: 3px solid #cffcfc;
+            background-color: #cff;
+            margin-left: 73%;
+            margin-top: 10px;
+        }
+
+        .findout {
+            color: red;
+            background-color: aqua;
+
+        }
+
+        .p {
+            color: red;
         }
     </style>
 </head>
@@ -78,10 +109,10 @@
 <body>
     <div class="header">
         <h1>请填写你要搜索的图书</h1>
-        <input type="text" placeholder="请输入书名">
-        <input type="text" placeholder="请输入作者">
-        <input type="text" placeholder="请输入出版社">
-        <button class="find">搜索</button>
+        <input id="value1" type="text" placeholder="请输入书名">
+        <input id="value2" type="text" placeholder="请输入作者">
+        <input id="value3" type="text" placeholder="请输入出版社">
+        <button id="find">搜索</button>
 
 
     </div>
@@ -94,20 +125,102 @@
                 <td>出版社</td>
                 <td>单价</td>
             </tr>
+
             <tr>
-                <td>斗破苍穹</td>
-                <td>天蚕土豆</td>
-                <td>10000</td>
-                <td>笔下文学</td>
-                <td>5.00$</td>
+                <td>
+                    <p>斗破苍穹</p>
+                </td>
+                <td>
+                    <span>天蚕土豆</span>
+                </td>
+                <td>
+                    1
+                </td>
+                <td>
+                    笔下文学
+                </td>
+                <td>
+                    5.00$
+                </td>
+                <td><button>删除</button></td>
             </tr>
+            <tr>
+                <td>
+                    <p>aaaaa</p>
+                </td>
+                <td>
+                    bbbbb
+                </td>
+                <td>
+                    1
+                </td>
+                <td>
+                    cccc
+                </td>
+                <td>
+                    5.00$
+                </td>
+                <td><button>删除</button></td>
+            </tr>
+
         </table>
+        <button id="add">添加</button>
     </div>
     <div class="footer">
 
     </div>
 
     <script>
+        //        搜索功能
+        var find = document.getElementById('find');
+        find.onclick = function() {
+            //        获取搜索内容
+            var value1 = document.getElementById('value1');
+            var value2 = document.getElementById('value2');
+            var value3 = document.getElementById('value3');
+            var book = document.getElementsByTagName('p');
+            var person = document.getElementsByTagName('span');
+
+            //            alert(value1);
+            //                          alert(person[0].innerHTML);
+            for (var i = 0; i < book.length; i++) {
+
+                if (value1.value == book[i].innerHTML || value2.value == person[i].innerHTML) {
+                    book[i].parentNode.className = 'findout';
+                    person[i].parentNode.className = 'findout';
+                    //                alert(value2);
+                    //                alert(value3);
+                    //                    continue;
+                    for (var j = 0; j < i; j++) {
+                        book[j].parentNode.parentNode.style.display = 'none';
+                    }
+                    for (var k = book.length - 1; k > i; k--) {
+                        book[k].parentNode.parentNode.style.display = 'none';
+
+                    }
+                }
+
+                //            if(value1.value != book[i].innerHTML || value2.value != person[i].innerHTML){
+                //                  
+                ////                     person[i].parentNode.parentNode.style.display = 'none';
+                //                }
+                //          
+
+
+            }
+            value1.value = '';
+            value2.value = '';
+            value3.value = '';
+        }
+
+
+
+
+        //        搜索功能
+
+        //        添加图书功能
+
+        //        添加图书功能
     </script>
 </body>
 
