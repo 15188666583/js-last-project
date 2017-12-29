@@ -103,6 +103,7 @@
         .p {
             color: red;
         }
+
     </style>
 </head>
 
@@ -137,7 +138,7 @@
                     1
                 </td>
                 <td>
-                    笔下文学
+                    <index>笔下文学</index>
                 </td>
                 <td>
                     5.00$
@@ -149,13 +150,49 @@
                     <p>aaaaa</p>
                 </td>
                 <td>
-                    bbbbb
+                    <span>bbbbb</span>
                 </td>
                 <td>
                     1
                 </td>
                 <td>
-                    cccc
+                    <index>cccc</index>
+                </td>
+                <td>
+                    5.00$
+                </td>
+                <td><button>删除</button></td>
+            </tr>
+             <tr>
+                <td>
+                    <p>苍穹</p>
+                </td>
+                <td>
+                    <span>天蚕土豆</span>
+                </td>
+                <td>
+                    1
+                </td>
+                <td>
+                    <index>笔下文学</index>
+                </td>
+                <td>
+                    5.00$
+                </td>
+                <td><button>删除</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <p>aa</p>
+                </td>
+                <td>
+                    <span>bbbbb</span>
+                </td>
+                <td>
+                    1
+                </td>
+                <td>
+                    <index>cccc</index>
                 </td>
                 <td>
                     5.00$
@@ -180,32 +217,29 @@
             var value3 = document.getElementById('value3');
             var book = document.getElementsByTagName('p');
             var person = document.getElementsByTagName('span');
+            var chubanshe = document.getElementsByTagName('index');
 
             //            alert(value1);
             //                          alert(person[0].innerHTML);
+            //            alert(person[0].innerHTML);
             for (var i = 0; i < book.length; i++) {
 
-                if (value1.value == book[i].innerHTML || value2.value == person[i].innerHTML) {
-                    book[i].parentNode.className = 'findout';
-                    person[i].parentNode.className = 'findout';
-                    //                alert(value2);
-                    //                alert(value3);
-                    //                    continue;
-                    for (var j = 0; j < i; j++) {
-                        book[j].parentNode.parentNode.style.display = 'none';
-                    }
-                    for (var k = book.length - 1; k > i; k--) {
-                        book[k].parentNode.parentNode.style.display = 'none';
-
-                    }
+                if (value1.value == book[i].innerHTML ) {
+                    book[i].className = 'findout';
+                } 
+                else if(value2.value == person[i].innerHTML){
+                          person[i].className = 'findout';
+                        
+                        }
+                else if(value3.value == chubanshe[i].innerHTML){
+                        
+                         chubanshe[i].className = 'findout';
+                        }
+                
+                
+                else {
+                    book[i].parentNode.parentNode.style.display = 'none';
                 }
-
-                //            if(value1.value != book[i].innerHTML || value2.value != person[i].innerHTML){
-                //                  
-                ////                     person[i].parentNode.parentNode.style.display = 'none';
-                //                }
-                //          
-
 
             }
             value1.value = '';
@@ -221,6 +255,7 @@
         //        添加图书功能
 
         //        添加图书功能
+
     </script>
 </body>
 
