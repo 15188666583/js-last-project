@@ -12,7 +12,7 @@
 
         body {
 
-            background: url(img/40-369642.jpg);
+            background: url(img/66.jpg);
             background-size: cover;
             background-color: #000;
         }
@@ -136,9 +136,7 @@
             color: red;
             background-color: #fff;
         }
-        .Odelete{
-            color: red;
-            }
+       
     </style>
 </head>
 
@@ -251,13 +249,13 @@
             <br> 价格：
             <input id="value8" class="Oinpt" type="text" placeholder="请输入价格"> 出版社：
             <input id="value6" class="Oinpt" type="text" placeholder="请输入出版社">
-            <button id="build">添加</button>
+            <button id="build" onclick="build1()">添加</button>
         </div>
 
     </div>
 
     <script>
-         var Odelete = document.getElementsByClassName('Odelete');
+        
         //        搜索功能
         var find = document.getElementById('find');
         //        搜索点击事件
@@ -308,7 +306,8 @@
             footer[0].style.display = 'block';
 
         }
-        build.onclick = function() {
+    
+      function build1(){
             var table1 = document.getElementById('table1'); //获取书库列表
             var value4 = document.getElementById('value4'); //获取添加书名
             var value5 = document.getElementById('value5'); //获取添加的作者名字
@@ -333,21 +332,19 @@
             Obtn.innerHTML = '删除';
             Otr.appendChild(Otd);
             Otd.appendChild(Obtn);
-
- footer[0].style.display = 'none';
-                return Odelete.length;
-
-
-           
+            footer[0].style.display = 'none';
+//               
+//           var Odelete = document.getElementsByClassName('Odelete');
+//           return Odelete.length;
 
         }
         
  //        删除功能
-         var Odelete = document.getElementsByClassName('Odelete');
-        window.onload = function(){
-           
-        for (var j = 0; j < Odelete.length; j++) {
-           
+        var Odelete = document.getElementsByClassName('Odelete');
+        var a = build1();
+//        alert(a);
+   
+        for (var j = 0; j < a; j++) {
             Odelete[j].onclick = (function() {
                 return function() {
                      this.parentNode.parentNode.innerHTML = '';
@@ -356,7 +353,7 @@
         }
             
             
-        }
+        
        
             
         
