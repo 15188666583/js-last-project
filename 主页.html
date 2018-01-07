@@ -12,8 +12,9 @@
 
         body {
 
-            background: url(img/17961491_102417672000_2.png) no-repeat;
+            background: url(img/40-369642.jpg);
             background-size: cover;
+            background-color: #000;
         }
 
         h1 {
@@ -107,7 +108,7 @@
             text-align: center;
         }
 
-        #table1 tr:nth-of-type(1) {
+        #table1 th {
             font-size: 2vw;
             font-weight: bold;
         }
@@ -135,7 +136,9 @@
             color: red;
             background-color: #fff;
         }
-
+        .Odelete{
+            color: red;
+            }
     </style>
 </head>
 
@@ -155,11 +158,11 @@
         <!--       书库列表-->
         <table id="table1">
             <tr>
-                <td>书名</td>
-                <td>作者名</td>
-                <td>数量</td>
-                <td>出版社</td>
-                <td>单价</td>
+                <th>书名</th>
+                <th>作者名</th>
+                <th>数量</th>
+                <th>出版社</th>
+                <th>单价</th>
             </tr>
 
             <tr>
@@ -254,6 +257,7 @@
     </div>
 
     <script>
+         var Odelete = document.getElementsByClassName('Odelete');
         //        搜索功能
         var find = document.getElementById('find');
         //        搜索点击事件
@@ -329,27 +333,36 @@
             Obtn.innerHTML = '删除';
             Otr.appendChild(Otd);
             Otd.appendChild(Obtn);
-// var Odelete = document.getElementsByClassName('Odelete');
+
+ footer[0].style.display = 'none';
+                return Odelete.length;
 
 
-
-
-            footer[0].style.display = 'none';
+           
 
         }
         
  //        删除功能
-        var Odelete = document.getElementsByClassName('Odelete');
-
+         var Odelete = document.getElementsByClassName('Odelete');
+        window.onload = function(){
+           
         for (var j = 0; j < Odelete.length; j++) {
-            Odelete[j].onclick = (function(idx) {
-
+           
+            Odelete[j].onclick = (function() {
                 return function() {
-                    this.parentNode.parentNode.innerHTML = '';
+                     this.parentNode.parentNode.innerHTML = '';
                 }
-            })(j)
+            })(j);
         }
-
+            
+            
+        }
+       
+            
+        
+        
+        
+        
     </script>
 </body>
 
