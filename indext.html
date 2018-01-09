@@ -12,14 +12,12 @@
 
         body {
 
-            background: url(img/66.jpg);
+            background: url(img/timg.jpg) no-repeat;
             background-size: cover;
-            background-color: #000;
+
         }
 
-        h1 {
-            color: azure;
-        }
+
 
         .header {
             margin: 10px auto;
@@ -39,13 +37,13 @@
 
         .header input {
             border-radius: 10px;
-            border: 1px solid black;
+            border: 1px solid #fff;
             height: 30px;
 
         }
 
         buttton {
-            border: 3px solid #ccc;
+            border: 2px solid #ccc;
             height: 30px;
             width: 30px;
 
@@ -103,22 +101,25 @@
         }
 
         #table1 {
-            border: 1px solid #ff0;
+            border: 1px solid rgb(000, 124, 135);
             width: 80%;
             text-align: center;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.4);
         }
 
         #table1 th {
-            font-size: 2vw;
+            font-size: 1.5vw;
             font-weight: bold;
+            color: mediumpurple;
         }
 
         #table1 tr td button {
             border-radius: 30px;
             height: 20px;
             width: 40px;
-            border: 1px solid #fff;
-            background-color: cornsilk;
+            border: 1px solid rgb(84, 93, 129);
+            background-color: burlywood;
 
         }
 
@@ -126,8 +127,8 @@
             border-radius: 10px;
             height: 30px;
             width: 70px;
-            border: 3px solid #cffcfc;
-            background-color: #cff;
+            border: 1px solid rgb(190, 179, 145);
+            background-color: rgb(116, 143, 119);
             margin-left: 73%;
             margin-top: 10px;
         }
@@ -136,16 +137,38 @@
             color: red;
             background-color: #fff;
         }
+
+        h1 {
+            text-align: center;
+            font-size: 5vw;
+            margin: 50px;
+            font-family: cursive;
+            color: rgb(197, 199, 170);
+
+        }
+
+        #close {
+            position: absolute;
+            font-size: 30px;
+            border: 0;
+            background: none;
+            color: #000;
+            top: 10px;
+            right: 30px;
+        }
+
     </style>
 </head>
 
 <body>
     <!--   搜索栏-->
     <div class="header">
-        <h1>请填写你要搜索的图书</h1>
+        <h1>图书管理系统</h1>
+        <!--        <h2>请填写你要搜索的图书</h2>-->
         <input id="value1" type="text" placeholder="请输入书名">
         <input id="value2" type="text" placeholder="请输入作者">
         <input id="value3" type="text" placeholder="请输入出版社">
+        <input id="value0" type="text" placeholder="请输入ISBN">
         <button id="find" onclick="search()">搜索</button>
 
 
@@ -160,6 +183,7 @@
                 <th>数量</th>
                 <th>出版社</th>
                 <th>单价</th>
+                <th>ISBN</th>
             </tr>
 
             <tr>
@@ -177,6 +201,9 @@
                 </td>
                 <td>
                     <p class="price">5.00$</p>
+                </td>
+                <td>
+                    <p class="isbn">05421395123</p>
                 </td>
                 <td><button class="Odelete" onclick="Oremove()">删除</button></td>
             </tr>
@@ -196,6 +223,9 @@
                 <td>
                     <p class="price">8.00$</p>
                 </td>
+                <td>
+                    <p class="isbn">12544363572</p>
+                </td>
                 <td><button class="Odelete" onclick="Oremove()">删除</button></td>
             </tr>
             <tr>
@@ -213,6 +243,9 @@
                 </td>
                 <td>
                     <p class="price">2.00$</p>
+                </td>
+                <td>
+                    <p class="isbn">76548338769</p>
                 </td>
                 <td><button class="Odelete" onclick="Oremove()">删除</button></td>
             </tr>
@@ -232,6 +265,9 @@
                 <td>
                     <p class="price">3.5.00$</p>
                 </td>
+                <td>
+                    <p class="isbn">76548339571</p>
+                </td>
                 <td><button class="Odelete" onclick="Oremove()">删除</button></td>
             </tr>
         </table>
@@ -244,10 +280,11 @@
             <input id="value4" class="Oinpt" type="text" placeholder="请输入书名"> 作者：
             <input id="value5" class="Oinpt" type="text" placeholder="请输入作者">
             <br> 数量：
-            <input id="value7" class="Oinpt" type="text" placeholder="请输入出版社">
-            <br> 价格：
-            <input id="value8" class="Oinpt" type="text" placeholder="请输入价格"> 出版社：
-            <input id="value6" class="Oinpt" type="text" placeholder="请输入出版社">
+            <input id="value7" class="Oinpt" type="text" placeholder="请输入出版社"> 价格：
+            <input id="value8" class="Oinpt" type="text" placeholder="请输入价格"> <br>出版社：
+            <input id="value6" class="Oinpt" type="text" placeholder="请输入出版社"> ISBN:
+            <input id="value9" class="Oinpt" type="text" placeholder="请输入ISBN">
+            <button id='close' onclick="Oclose()">×</button>
             <button id="build" onclick="build1()">添加</button>
         </div>
 
@@ -272,12 +309,13 @@
             var value6 = document.getElementById('value6'); //获取添加的出版社名字
             var value7 = document.getElementById('value7'); //获取添加的数量
             var value8 = document.getElementById('value8'); //获取添加的价格
-
-            var Oarr = [value4, value5, value6, value7, value8];
-            var Oclass = ['book', 'author', 'Onumber', 'press', 'price'];
+            var value9 = document.getElementById('value9'); //获取添加的ISBN
+            var Oarr = [value4, value5, value6, value7, value8, value9];
+            var Oclass = ['book', 'author', 'Onumber', 'press', 'price', 'isbn'];
             var Otr = document.createElement('tr');
-            for (var i = 0; i < 5; i++) {
-
+         
+            for (var i = 0; i < 6; i++) {
+                   
                 if (Oarr[i].value == '') {
                     alert('请填写完整。');
                     return 1;
@@ -303,6 +341,7 @@
             value6.value = '';
             value7.value = '';
             value8.value = '';
+             value9.value = '';
             footer[0].style.display = 'none';
             Oremove();
         }
@@ -329,9 +368,11 @@
             var value1 = document.getElementById('value1'); //获取输入的书名
             var value2 = document.getElementById('value2'); //获取输入的作者名
             var value3 = document.getElementById('value3'); //获取输入的出版社名
+             var value4 = document.getElementById('value0'); //获取输入的出版社名
             var book = document.getElementsByClassName('book'); //获取书库书名       
             var author = document.getElementsByClassName('author'); //获取书库作者名
             var chubanshe = document.getElementsByClassName('press'); //获取书库出版社名
+            var isbn = document.getElementsByClassName('isbn'); //获取isbn名
             //                     alert(book.length);
             //遍历书库
             for (var i = 0; i < book.length; i++) {
@@ -346,7 +387,12 @@
                     chubanshe[i].style.color = 'red';
                     chubanshe[i].style.backgroundColor = 'white';
 
-                } else {
+                } else if (value4.value == isbn[i].innerHTML) {
+                    isbn[i].style.color = 'red';
+                    isbn[i].style.backgroundColor = 'white';
+
+                } 
+                else {
                     book[i].parentNode.parentNode.style.display = 'none';
                 }
 
@@ -355,6 +401,14 @@
             value2.value = '';
             value3.value = '';
         }
+        //        关闭添加窗口
+        function Oclose() {
+            var footer = document.getElementsByClassName('footer');
+            footer[0].style.display = 'none';
+
+
+        }
+
     </script>
 </body>
 
