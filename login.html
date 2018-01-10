@@ -7,7 +7,7 @@
 <style>
     body {
         background: url(img/111.jpg);
-        
+
     }
 
     .div1 {
@@ -38,12 +38,14 @@
         font-size: 20px;
 
     }
+
     .username {
         width: 40%;
         height: 50px;
         margin: 30px auto;
 
     }
+
     .username1 {
         width: 70%;
         height: 50px;
@@ -85,7 +87,8 @@
         right: 55%;
         font-size: 1.5vw;
     }
-#Bsignin1 {
+
+    #Bsignin1 {
         height: 40px;
         width: 100px;
         border-radius: 10px;
@@ -102,7 +105,8 @@
         right: 45%;
         font-size: 1.5vw;
     }
-    #Tsignin{
+
+    #Tsignin {
         width: 50%;
         height: 400px;
         position: absolute;
@@ -112,15 +116,16 @@
         right: 0;
         bottom: 0;
         margin: auto;
-       border-radius: 20px;
+        border-radius: 20px;
     }
-    #Tsignin1{
-        background-color: rgba(0,0,0,0.9);
+
+    #Tsignin1 {
+        background-color: rgba(0, 0, 0, 0.7);
         width: 100%;
         height: 100%;
         position: absolute;
-            top: 0px;
-            left: 0px;
+        top: 0px;
+        left: 0px;
         display: none;
     }
 </style>
@@ -136,27 +141,49 @@
         <button id="Blogin">登陆</button>
     </div>
     <div id="Tsignin1">
-         <div id="Tsignin">
-          <div class="username1">
-            <p>用户名：</p><input type="text" placeholder="请输入账号"></div>
-        <div class="username1">
-            <p> &nbsp;&nbsp;&nbsp;密码：</p><input type="text" placeholder="请输入密码"></div>
-         <div class="username1">
-            <p> &nbsp;&nbsp;&nbsp;确认：</p><input type="text" placeholder="请再次输入密码"></div>
-        <br>
-        <button id="Bsignin1">确认注册</button>
+        <div id="Tsignin">
+            <div class="username1">
+                <p>用户名：</p><input id="Ousername" type="text" placeholder="请输入账号"></div>
+            <div class="username1">
+                <p> &nbsp;&nbsp;&nbsp;密码：</p><input id="Opassword" type="password" placeholder="请输入密码"></div>
+            <div class="username1">
+                <p> &nbsp;&nbsp;&nbsp;确认：</p><input id="Opassword1" type="password" placeholder="请再次输入密码"></div>
+            <br>
+            <button id="Bsignin1" onclick="zhuce()">确认注册</button>
         </div>
     </div>
     <script>
+        //        注册框弹出
         var signin = document.getElementById("Bsignin");
         var signin1 = document.getElementById("Bsignin1");
         var login = document.getElementById('Blogin');
-        var OTsignin = document.getElementById('Tsignin1')
-        signin.onclick = function(){
+        var OTsignin = document.getElementById('Tsignin1');
+        signin.onclick = function() {
             OTsignin.style.display = 'block';
         }
-        signin1.onclick = function(){
+        //        注册信息获取
+        function zhuce() {
+            var Ousername = document.getElementById('Ousername');
+            var Opassword = document.getElementById('Opassword');
+            var Opassword1 = document.getElementById('Opassword1');
+            var Oarr = new Array(2);
+            if (Ousername.value == '' || Opassword.value == '' || Opassword1.vale == '') {
+                alert('用户名与密码不能为空！');
+                return 1;
+            } else {
+                if (Opassword.value != Opassword1.value) {
+                    alert("两次填写的密码不同");
+                    return 1;
+                }
+
+            }
+            Oarr[0]=Ousername.value;
+            Oarr[1]=Opassword.value;
+            Ousername.value = '';
+            Opassword.value = '';
+            Opassword1.value = '';
             OTsignin.style.display = 'none';
+            return Oarr;
         }
     </script>
 </body>
