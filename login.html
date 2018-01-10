@@ -5,9 +5,11 @@
     <title>登陆</title>
 </head>
 <style>
-    body{
+    body {
         background: url(img/111.jpg);
+        
     }
+
     .div1 {
         position: fixed;
         top: 0px;
@@ -17,7 +19,7 @@
         margin: auto;
         height: 200px;
         width: 80%;
-/*background-color: aqua;*/
+        /*background-color: aqua;*/
     }
 
     p {
@@ -33,23 +35,31 @@
         background-color: #cacaca;
         height: 45px;
         width: 70%;
-       font-size: 20px;
-       
+        font-size: 20px;
+
     }
-    .username{
-        width:40%;
+    .username {
+        width: 40%;
         height: 50px;
         margin: 30px auto;
-        
+
     }
-    h1{
+    .username1 {
+        width: 70%;
+        height: 50px;
+        margin: 30px auto;
+
+    }
+
+    h1 {
         text-align: center;
         color: #ccc;
         font-size: 4vw;
         font-family: serif;
         margin: 100px;
     }
-    #signin{
+
+    #signin {
         margin: 0 auto;
         height: 40px;
         width: 6%;
@@ -57,31 +67,97 @@
         position: absolute;
         right: 53%;
     }
-    #login{
+
+    #login {
         margin: 0 auto;
-         height: 40px;
+        height: 40px;
         width: 6%;
         border-radius: 5px;
-         position: absolute;
+        position: absolute;
         right: 41%;
+    }
+
+    #Bsignin {
+        height: 40px;
+        width: 70px;
+        border-radius: 10px;
+        position: absolute;
+        right: 55%;
+        font-size: 1.5vw;
+    }
+#Bsignin1 {
+        height: 40px;
+        width: 100px;
+        border-radius: 10px;
+        position: absolute;
+        right: 45%;
+        font-size: 1.5vw;
+    }
+
+    #Blogin {
+        height: 40px;
+        width: 70px;
+        border-radius: 10px;
+        position: absolute;
+        right: 45%;
+        font-size: 1.5vw;
+    }
+    #Tsignin{
+        width: 50%;
+        height: 400px;
+        position: absolute;
+        background-color: #ccc;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+       border-radius: 20px;
+    }
+    #Tsignin1{
+        background-color: rgba(0,0,0,0.9);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+            top: 0px;
+            left: 0px;
+        display: none;
     }
 </style>
 
 <body>
-   <h1>图书管理系统</h1>
+    <h1>图书管理系统</h1>
     <div class="div1">
         <div class="username">
             <p>账号</p><input type="text" placeholder="请输入账号"></div>
         <div class="username">
             <p>密码</p><input type="text" placeholder="请输入密码"></div>
-            <button id="Bsignin">注册</button>
-            <button id="Blogin">登陆</button>
+        <button id="Bsignin">注册</button>
+        <button id="Blogin">登陆</button>
     </div>
-    <div id="Tsignin"></div>
+    <div id="Tsignin1">
+         <div id="Tsignin">
+          <div class="username1">
+            <p>用户名：</p><input type="text" placeholder="请输入账号"></div>
+        <div class="username1">
+            <p> &nbsp;&nbsp;&nbsp;密码：</p><input type="text" placeholder="请输入密码"></div>
+         <div class="username1">
+            <p> &nbsp;&nbsp;&nbsp;确认：</p><input type="text" placeholder="请再次输入密码"></div>
+        <br>
+        <button id="Bsignin1">确认注册</button>
+        </div>
+    </div>
     <script>
-    var signin = document.getElementById("Bsignin");
+        var signin = document.getElementById("Bsignin");
+        var signin1 = document.getElementById("Bsignin1");
         var login = document.getElementById('Blogin');
-    
+        var OTsignin = document.getElementById('Tsignin1')
+        signin.onclick = function(){
+            OTsignin.style.display = 'block';
+        }
+        signin1.onclick = function(){
+            OTsignin.style.display = 'none';
+        }
     </script>
 </body>
 </html>
