@@ -156,7 +156,6 @@
             top: 10px;
             right: 30px;
         }
-
     </style>
 </head>
 
@@ -182,7 +181,7 @@
                 <th>作者名</th>
                 <th>数量</th>
                 <th>出版社</th>
-                <th>单价</th>
+                <th>单价($)</th>
                 <th>ISBN</th>
             </tr>
 
@@ -200,7 +199,7 @@
                     <p class="press">笔下文学</p>
                 </td>
                 <td>
-                    <p class="price">5.00$</p>
+                    <p class="price">5.00</p>
                 </td>
                 <td>
                     <p class="isbn">05421395123</p>
@@ -221,7 +220,7 @@
                     <p class="press">起点中文网</p>
                 </td>
                 <td>
-                    <p class="price">8.00$</p>
+                    <p class="price">8.00</p>
                 </td>
                 <td>
                     <p class="isbn">12544363572</p>
@@ -242,7 +241,7 @@
                     <p class="press">书包中文网</p>
                 </td>
                 <td>
-                    <p class="price">2.00$</p>
+                    <p class="price">2.00</p>
                 </td>
                 <td>
                     <p class="isbn">76548338769</p>
@@ -263,7 +262,7 @@
                     <p class="press">书包网</p>
                 </td>
                 <td>
-                    <p class="price">3.5.00$</p>
+                    <p class="price">3.5.00</p>
                 </td>
                 <td>
                     <p class="isbn">76548339571</p>
@@ -313,9 +312,9 @@
             var Oarr = [value4, value5, value6, value7, value8, value9];
             var Oclass = ['book', 'author', 'Onumber', 'press', 'price', 'isbn'];
             var Otr = document.createElement('tr');
-         
+
             for (var i = 0; i < 6; i++) {
-                   
+
                 if (Oarr[i].value == '') {
                     alert('请填写完整。');
                     return 1;
@@ -341,7 +340,7 @@
             value6.value = '';
             value7.value = '';
             value8.value = '';
-             value9.value = '';
+            value9.value = '';
             footer[0].style.display = 'none';
             Oremove();
         }
@@ -368,7 +367,7 @@
             var value1 = document.getElementById('value1'); //获取输入的书名
             var value2 = document.getElementById('value2'); //获取输入的作者名
             var value3 = document.getElementById('value3'); //获取输入的出版社名
-             var value4 = document.getElementById('value0'); //获取输入的出版社名
+            var value4 = document.getElementById('value0'); //获取输入的出版社名
             var book = document.getElementsByClassName('book'); //获取书库书名       
             var author = document.getElementsByClassName('author'); //获取书库作者名
             var chubanshe = document.getElementsByClassName('press'); //获取书库出版社名
@@ -391,8 +390,7 @@
                     isbn[i].style.color = 'red';
                     isbn[i].style.backgroundColor = 'white';
 
-                } 
-                else {
+                } else {
                     book[i].parentNode.parentNode.style.display = 'none';
                 }
 
@@ -408,7 +406,6 @@
 
 
         }
-
     </script>
 </body>
 

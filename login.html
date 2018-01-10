@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+</head>
+<style>
+    body{
+        background: url(img/111.jpg);
+    }
+    .div1 {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        height: 200px;
+        width: 80%;
+/*background-color: aqua;*/
+    }
+
+    p {
+        font-size: 2vw;
+        color: black;
+        display: inline-block;
+        margin: 10px;
+    }
+
+    input {
+        border: 1px solid black;
+        border-radius: 20px;
+        background-color: #cacaca;
+        height: 45px;
+        width: 70%;
+       font-size: 20px;
+       
+    }
+    .username{
+        width:40%;
+        height: 50px;
+        margin: 30px auto;
+        
+    }
+    h1{
+        text-align: center;
+        color: #ccc;
+        font-size: 4vw;
+        font-family: serif;
+        margin: 100px;
+    }
+    #signin{
+        margin: 0 auto;
+        height: 40px;
+        width: 6%;
+        border-radius: 5px;
+        position: absolute;
+        right: 53%;
+    }
+    #login{
+        margin: 0 auto;
+         height: 40px;
+        width: 6%;
+        border-radius: 5px;
+         position: absolute;
+        right: 41%;
+    }
+</style>
+
+<body>
+   <h1>图书管理系统</h1>
+    <div class="div1">
+        <div class="username">
+            <p>账号</p><input type="text" placeholder="请输入账号"></div>
+        <div class="username">
+            <p>密码</p><input type="text" placeholder="请输入密码"></div>
+            <button id="Bsignin">注册</button>
+            <button id="Blogin">登陆</button>
+    </div>
+    <div id="Tsignin"></div>
+    <script>
+    var signin = document.getElementById("Bsignin");
+        var login = document.getElementById('Blogin');
+    
+    </script>
+</body>
+</html>
