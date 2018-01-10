@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>JS函数返回多个值</title>
+</head>
+<body>
+  <input type="button" onclick="getNames()" value="test" />
+ 
+  <script type="text/javascript">
+function getData()
+{
+  var names=new Array("oec2003","oec2004");
+  return names;
+}
+function getNames()
+{
+  var names=getData();
+  alert(getData()[0]); //返回oec2003
+    alert(getData()[1]);
+}
+</script>
+ 
+</body>
+</html>
